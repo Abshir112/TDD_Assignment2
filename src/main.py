@@ -1,6 +1,3 @@
-"""This module contains main function."""
-
-import sys
 import game
 import dice
 import dicehand
@@ -9,26 +6,16 @@ import intelligence
 
 
 def main():
-    """Main function."""
-    print("Choose game mode")
-    print("1. Player vs Player")
-    print("2. Player vs Computer")
-    print("3. Exit\n")
-    game_type1 = input("Enter your choice(1, 2, 3): ")
-    if game_type1 == "1":
+    game_type1 = input("Press p for player vs \
+player:/ press c for player vs computer: ")
+    if game_type1 == "p" or game_type1 == "P":
         p_vs_p()
-    elif game_type1 == "2":
+    elif game_type1 == "c" or game_type1 == "C":
         p_vs_c()
-    elif game_type1 == "3":
-        print("Bye")
-        sys.exit()
-    else:
-        print("Invalid choice")
-        main()
 
 
 def p_vs_c():
-    """Player vs Computer."""
+    target = game.game.POINTS_TO_WIN
     choose_name = input("Enter Your name: ")
     player1 = player.player("", 0)
     player1.set_name(choose_name)
@@ -38,51 +25,17 @@ def p_vs_c():
     dicehand3 = intelligence.intelligence(player3, dice1)
     game1 = game.game(dicehand1, dicehand3)
     while game1.is_over is not True:
-        p3 = dicehand3.which_players_turn()
         while dicehand1.turn_over is not True:
-            p1 = dicehand1.which_players_turn()
-            print(f"It's {p1.get_name()} turn")
-            user_inp = input("(help) roll/hold: ")
-            if user_inp == "roll":
-                print("You choose to play")
-                print(f"{p1.get_name()} rolled {dicehand1.roll()}")
-                print(f"{p1} turn score is {dicehand1.get_score()}")
-            elif user_inp == "hold":
-                print("You choose to hold")
-                dicehand1.end_turn()
-                print(p1)
-            else:
-                cheater = input("Cheat(x) or Change name(n): ").lower()
-                if cheater == "x":
-                    game1.cheat()
-
-                elif cheater == "n":
-                    new_name = input("Enter your new name: ")
-                    p1.set_name(new_name)
-            if dicehand1.turn_over is True and p1.has_won is False:
+            game1.player_play()
+            if dicehand1.turn_over is True:
                 game1.start_next_turn()
-            if p1.get_total_score() >= 100:
-                p1.has_won = True
-                print(f'{p1.get_name()} is winner')
-                game1.is_over = True
-                break
-        
-        while dicehand3.turn_over is not True and p1.has_won is False:
-            # print(f"It's {p3.get_name()} turn")
-            if dicehand3.play() == "roll":
-                print("Computer Choose to play")
-                roll = dicehand3.roll()
-                print(f"{p3.get_name()} rolled {roll}")
-                print(f"{p3} turn score is {dicehand3.get_score()}")
-            elif dicehand3.play() == "hold":
-                print("Computer choose to hold")
-                dicehand3.end_turn()
-                print(p3)
+        while dicehand3.turn_over is not True and dicehand1.which_players_turn().has_won is False:
+            dicehand3.computer_play()
             if dicehand3.turn_over is True:
                 game1.start_next_turn()
-            if p3.get_total_score() >= 10 and p1.has_won is False:
-                p3.has_won = True
-                print(f'{p3.get_name()} is winner')
+            if dicehand3.which_players_turn().get_total_score() >= target:
+                dicehand3.which_players_turn().has_won = True
+                print(f'{dicehand3.which_players_turn().get_name()} is winner')
                 game1.is_over = True
                 break
 
@@ -100,72 +53,14 @@ def p_vs_p():
     game1 = game.game(dicehand1, dicehand2)
     while game1.is_over is not True:
         while dicehand1.turn_over is not True:
-            p1 = dicehand1.which_players_turn()
-            print(f"It's {p1.get_name()} turn")
-            user_inp = input("(help) roll/hold: ")
-            if user_inp == "roll":
-                print("You choose to play")
-                print(f"{p1.get_name()} rolled {dicehand1.roll()}")
-                print(f"{p1} turn score is {dicehand1.get_score()}")
-            elif user_inp == "hold":
-                print("You choose to hold")
-                dicehand1.end_turn()
-                print(p1)
-            else:
-                cheater = input("Cheat(x) or Change name(n): ").lower()
-                if cheater == "x":
-                    game1.cheat()
-
-                elif cheater == "n":
-                    new_name = input("Enter your new name: ")
-                    p1.set_name(new_name)
-            if dicehand1.turn_over is True and p1.has_won is False:
+            game1.player_play()
+            if dicehand1.turn_over is True and dicehand2.which_players_turn().has_won is False:
                 game1.start_next_turn()
-            if p1.get_total_score() >= 100:
-                p1.has_won = True
-                print(f'{p1.get_name()} is winner')
-                game1.is_over = True
-                break
 
-        while dicehand2.turn_over is not True and p1.has_won is False:
-            p2 = dicehand2.which_players_turn()
-            print(f"It's {p2.get_name()} turn")
-            user_inp = input("(help) roll/hold: ")
-            if user_inp == "roll":
-                roll = game1.current_turn().roll()
-                print(f"{p2.get_name()} rolled {roll}")
-                print(f"{p2} turn score is \
-{game1.current_turn().get_score()}")
-            elif user_inp == "hold":
-                print("You choose to hold")
-                game1.current_turn().end_turn()
-                game1.start_next_turn()
-                print(p2)
-            else:
-                cheater = input("Cheat(x) or Change name(n): ").lower()
-                if cheater == "x":
-                    game1.cheat()
-
-                elif cheater == "n":
-                    new_name = input("Enter your new name: ")
-                    p2.set_name(new_name)
+        while dicehand2.turn_over is not True and dicehand1.which_players_turn().has_won is False:
+            game1.player_play()
             if game1.current_turn().turn_over is True:
                 game1.start_next_turn()
-            if p2.get_total_score() >= 10:
-                p2.has_won = True
-                print(f'{p2.get_name()} is winner')
-                game1.is_over = True
-                break
 
 
-if __name__ == "__main__":
-    print("\nWelcome to Pig Dice Game")
-    print("Rules: ")
-    print("The game starts with a roll of the dice.")
-    print("Roll the die to accumulate points, but if you roll a 1,")
-    print("you lose all points for that turn and")
-    print("the turn passes to the next player.")
-    print("You can choose to stop rolling and keep your points by holding'.")
-    print("The first player to reach 100 points wins.\n")
-    input("Press Enter to start the game...")
-    main()
+main()

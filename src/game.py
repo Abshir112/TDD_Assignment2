@@ -1,5 +1,3 @@
-"""This module contains the game class which is the main class of the game."""
-
 import dice
 import player
 import dicehand
@@ -32,12 +30,43 @@ class game:
 
     def is_over(self):
         return self.is_over
-    
+
     def cheat(self):
         self.dicehand1.which_players_turn().set_total_score(100)
-        
-            
-            
+
+    def player_play(self):
+        while self.current_turn().turn_over is not True:
+            p1 = self.current_turn().which_players_turn()
+            print(f"It's {p1.get_name()} turn")
+            user_inp = input("(help) roll/hold: ")
+            if user_inp == "roll":
+                print("You choose to play")
+                print(f"{p1.get_name()} rolled {self.current_turn().roll()}")
+                print(f"{p1} turn score is {self.current_turn().get_score()}")
+            elif user_inp == "hold":
+                print("You choose to hold")
+                self.current_turn().end_turn()
+                print(p1)
+            else:
+                cheater = input("Cheat(x) or Change name(n): ").lower()
+                if cheater == "x":
+                    self.cheat()
+                    self.is_over = True
+                    break
+
+                elif cheater == "n":
+                    new_name = input("Enter your new name: ")
+                    self.current_turn().which_players_turn().set_name(new_name)
+            if self.current_turn().which_players_turn().get_total_score() >= game.POINTS_TO_WIN:
+                self.current_turn().which_players_turn().has_won = True
+                print(f'{self.current_turn().which_players_turn().get_name()} \
+is winner')
+                self.is_over = True
+                break
+
+    def __str__(self) -> str:
+        return f'{self.player1} has scored {game.POINTS_TO_WIN}'
+
 
 '''
 dice1 = dice.dice(6)
