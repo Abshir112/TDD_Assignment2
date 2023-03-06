@@ -1,5 +1,4 @@
 """This module contains the dice class."""
-
 import random
 
 
