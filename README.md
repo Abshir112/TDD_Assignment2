@@ -46,3 +46,4 @@ This is a general template for any Python project you want to start working on.
 *Here you can add a list of authors/people who worked and maintain the project*
 
 - [@abshir](https://github.com/abshir112) - Idea & Initial work
+- [@Lakshmi](https://github.com/lakshmivishal9496 ) - Idea & Initial work
