@@ -1,15 +1,20 @@
+"""This module contains the dicehand class and its methods."""
+
 import dice
 import player
 
 
 class dicehand:
+    """This class represents a dicehand."""
+
     player1 = player.player("player1", 0)
     player2 = player.player("player2", 0)
     dice1 = dice.dice(6)
     gamechanger = 1
     player_list = []
 
-    def __init__(self, player1, dice1) -> None:
+    def __init__(self, player1, dice1):
+        """Initialize the dicehand."""
         self.player1 = player1
         self.dice1 = dice1
         self.score = 0
@@ -17,12 +22,15 @@ class dicehand:
         dicehand.player_list.append(self)
 
     def set_score(self, score):
+        """Set the score."""
         self.score = score
 
     def get_score(self):
+        """Get the score."""
         return self.score
 
     def roll(self):
+        """Roll the dice."""
         roll = dicehand.dice1.roll_dice()
         if roll == dicehand.gamechanger:
             self.set_score(0)
@@ -32,15 +40,19 @@ class dicehand:
         return roll
 
     def get_turn_over(self):
+        """Get the turn_over."""
         return self.turn_over
 
     def which_players_turn(self):
+        """Get the player."""
         return self.player1
 
-    def __str__(self) -> str:
+    def __str__(self):
+        """Return the string representation of the dicehand."""
         return f'{self.player1} and {self.dice1}'
 
     def end_turn(self):
+        """End the turn."""
         # player object's total score is incremented
         # by turn score when he want to hold ie endturn
         # with points he/she scored.
@@ -49,23 +61,3 @@ class dicehand:
         self.turn_over = True
         self.set_score(0)
         return p
-
-
-'''
-p1 = player.player("p1", 0)
-p2 = player.player("p2", 0)
-d1 = dicehand(p1, dice.dice(6))
-d2 = dicehand(p2, dice.dice(6))
-while d1.turn_over is False and d1.get_score() <= dicehand.TARGET:
-    print(d2.which_players_turn())
-    print(f"{p1.get_name()} rolled {d1.roll()}")
-    print(f"{p1} turn score is {d1.get_score()}")
-    print(p1.get_total_score())
-
-
-while d2.turn_over is False and d2.get_score() <= dicehand.TARGET:
-    print(d2.which_players_turn())
-    print(f"{p2.get_name()} rolled {d2.roll()}")
-    print(f"{p2} turn score is {d2.get_score()}")
-    print(p2.get_total_score())
-'''

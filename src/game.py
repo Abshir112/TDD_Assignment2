@@ -1,3 +1,5 @@
+"""This module contains the game class which is the main class of the game."""
+
 import dice
 import player
 import dicehand

@@ -1,36 +1,39 @@
+"""This module contains the player class and its methods."""
+
+
 class player:
+    """This class represents a player."""
+
     player_info = {}
 
-    def __init__(self, name, score) -> None:
+    def __init__(self, name, score):
+        """Initialize the player."""
         self.name = name
         self.score = score
 
         self.has_won = False
 
     def get_name(self):
+        """Get the name."""
         return self.name
 
     def get_winner(self):
+        """Get the winner."""
         return self.has_won
 
     def set_name(self, name):
+        """Set the name."""
         self.name = name
 
-    def __str__(self) -> str:
+    def __str__(self):
+        """Return the string representation of the player."""
         return f"The name of player is {self.name}\
  their total score is {self.score}"
 
     def set_total_score(self, score):
+        """Set the total score."""
         self.score = score
 
     def get_total_score(self):
+        """Get the total score."""
         return self.score
-
-
-# name change of player outside the class
-# player1 = player("khan", 100)
-# player2 = player("Pathan", 80)
-# print(player1)
-# player1.name = "Tom"
-# print(player1.name)
-# print(player.player_info.items())
