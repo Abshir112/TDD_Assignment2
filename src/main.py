@@ -67,16 +67,16 @@ def p_vs_p():
 
 
 if __name__ == "__main__":
-    print("Welcome to Pig Dice Game")
+    print("Welcome to Pig Dice Game.\n")
     print("""Rules:
     The game starts with a roll of the dice.
     Roll the die to accumulate points, but if you roll a 1,
     you lose all points for that turn and
     the turn passes to the next player.
     You can choose to stop rolling and keep your points by holding'.
-    The first player to reach 100 points wins.""")
+    The first player to reach 100 points wins.\n""")
 
-    print("Press Enter to start the game...")
+    input("Press Enter to start the game...")
 
 if __name__ == "__main__":
     main()
