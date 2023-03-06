@@ -1,3 +1,6 @@
+"""This module contains main function."""
+
+import sys
 import game
 import dice
 import dicehand
@@ -6,14 +9,27 @@ import intelligence
 
 
 def main():
-    game_type1 = input("Press p for player vs player:/ press c for player vs computer: ")
-    if game_type1 == "p" or game_type1 == "P":
+    """main function."""
+    print("Choose game mode")
+    print("1. Player vs Player")
+    print("2. Player vs Computer")
+    print("3. Exit")
+    print()
+    game_type1 = input("Enter your choice(1, 2, 3): ")
+    if game_type1 == "1":
         p_vs_p()
-    elif game_type1 == "c" or game_type1 == "C":
+    elif game_type1 == "2":
         p_vs_c()
+    elif game_type1 == "3":
+        print("Bye")
+        sys.exit()
+    else:
+        print("Invalid choice")
+        main()
 
 
 def p_vs_c():
+    """Player vs Computer."""
     choose_name = input("Enter Your name: ")
     player1 = player.player("", 0)
     player1.set_name(choose_name)
@@ -143,4 +159,15 @@ def p_vs_p():
                 break
 
 
-main()
+if __name__ == "__main__":
+    print("Welcome to Pig Dice Game")
+    print("Rules: ")
+    print("The game starts with a roll of the dice.")
+    print("Roll the die to accumulate points, but if you roll a 1,")
+    print("you lose all points for that turn and")
+    print("the turn passes to the next player.")
+    print("You can choose to stop rolling and keep your points by holding'.")
+    print("The first player to reach 100 points wins.")
+    print()
+    input("Press Enter to start")
+    main()
