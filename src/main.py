@@ -6,11 +6,14 @@ import intelligence
 
 
 def main():
-    game_type1 = input("Press p for player vs \
-player:/ press c for player vs computer: ")
-    if game_type1 == "p" or game_type1 == "P":
+    print("""    Choose game mode
+    1. Player vs Player
+    2. Player vs Computer
+    3. Exit""")
+    game_type1 = input("Enter your choice(1, 2, 3): ")
+    if game_type1 == "1":
         p_vs_p()
-    elif game_type1 == "c" or game_type1 == "C":
+    elif game_type1 == "2":
         p_vs_c()
 
 
@@ -63,4 +66,17 @@ def p_vs_p():
                 game1.start_next_turn()
 
 
-main()
+if __name__ == "__main__":
+    print("Welcome to Pig Dice Game")
+    print("""Rules:
+    The game starts with a roll of the dice.
+    Roll the die to accumulate points, but if you roll a 1,
+    you lose all points for that turn and
+    the turn passes to the next player.
+    You can choose to stop rolling and keep your points by holding'.
+    The first player to reach 100 points wins.""")
+
+    print("Press Enter to start the game...")
+
+if __name__ == "__main__":
+    main()
