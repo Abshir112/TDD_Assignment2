@@ -49,7 +49,7 @@ class Dicehand:
 
     def __str__(self):
         """Return the string representation of the dicehand."""
-        return f'{self.player1} and {self.dice1}'
+        return f"{self.player1} and {self.dice1}"
 
     def end_turn(self):
         """End the turn."""

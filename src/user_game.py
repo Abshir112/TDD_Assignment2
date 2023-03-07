@@ -16,10 +16,12 @@ class UserGame:
 
     def choose_game_type(self):
         """Choose game type."""
-        print("""    Choose game mode
+        print(
+            """    Choose game mode
     1. Player vs Player
     2. Player vs Computer
-    3. Exit""")
+    3. Exit"""
+            )
 
         self.game_type = input("Enter your choice(1, 2, 3): ")
 
@@ -55,8 +57,10 @@ class UserGame:
                     game1.start_next_turn()
                 if dicehand3.which_players_turn().get_total_score() >= target:
                     dicehand3.which_players_turn().has_won = True
-                    print(f'\n{dicehand3.which_players_turn().get_name()} \
-is winner')
+                    print(
+                        f"\n{dicehand3.which_players_turn().get_name()} \
+is winner"
+                        )
                     game1.is_over = True
                     break
 
@@ -89,13 +93,15 @@ is winner')
         print("--------------------------------------")
         print("\nWELCOME TO PIG DICE GAME.\n")
         print("--------------------------------------")
-        print("""Rules:
+        print(
+            """Rules:
         The game starts with a roll of the dice.
         Roll the die to accumulate points, but if you roll a 1,
         you lose all points for that turn and
         the turn passes to the next player.
         You can choose to stop rolling and keep your points by holding'.\n
-        The first player to reach 100 points wins.\n""")
+        The first player to reach 100 points wins.\n"""
+              )
 
         input("Press Enter to start the game...")
         print()

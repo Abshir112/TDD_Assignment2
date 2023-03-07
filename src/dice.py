@@ -7,8 +7,8 @@ class Dice:
 
     def __init__(self, dice):
         """Initialize the dice."""
-        self.__dice = dice
+        self.dice = dice
 
     def roll_dice(self):
         """Roll the dice."""
-        return random.randint(1, self.__dice)
+        return random.randint(1, self.dice)

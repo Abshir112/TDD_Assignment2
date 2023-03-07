@@ -58,8 +58,10 @@ class Game:
             if user_inp == "roll":
                 print(f"{p1.get_name()} choose to play")
                 print(f"{p1.get_name()} rolled {self.current_turn().roll()}")
-                print(f"\n{p1} turn score is: \
-{self.current_turn().get_score()}")
+                print(
+                    f"\n{p1} turn score is: \
+{self.current_turn().get_score()}"
+                )
             elif user_inp == "hold":
                 print(f"{p1.get_name()} choose to hold")
                 self.current_turn().end_turn()
@@ -77,11 +79,13 @@ class Game:
             contestant = self.current_turn().which_players_turn()
             if contestant.get_total_score() >= target:
                 self.current_turn().which_players_turn().has_won = True
-                print(f'{self.current_turn().which_players_turn().get_name()} \
-is winner')
+                print(
+                    f'{self.current_turn().which_players_turn().get_name()} \
+is winner'
+                    )
                 self.is_over = True
                 break
 
     def __str__(self):
         """Return the string representation of the game."""
-        return f'{self.player1} has scored {Game.POINTS_TO_WIN}'
+        return f"{self.player1} has scored {Game.POINTS_TO_WIN}"

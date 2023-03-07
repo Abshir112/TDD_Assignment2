@@ -69,7 +69,7 @@ flake8: check-venv
 
 black: check-venv
 	@$(call MESSAGE,$@)
-	-black --check --diff src/ tests/
+	-black --check --diff src/
 
 coverage: check-venv
 	@$(call MESSAGE,$@)
