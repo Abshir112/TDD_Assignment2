@@ -85,7 +85,3 @@ is winner'
                     )
                 self.is_over = True
                 break
-
-    def __str__(self):
-        """Return the string representation of the game."""
-        return f"{self.player1} has scored {Game.POINTS_TO_WIN}"

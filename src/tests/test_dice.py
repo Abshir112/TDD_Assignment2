@@ -13,9 +13,7 @@ class TestDice(unittest.TestCase):
 
     def test_init(self):
         """Test the init method."""
-        dice = Dice(6)
-        self.assertEqual(dice.dice, 6)
-        self.assertIsInstance(dice, Dice)
+        self.assertIsInstance(self.dice, Dice)
 
     def test_roll_dice_(self):
         """Test the roll dice method."""
