@@ -42,6 +42,7 @@ class Game:
     def cheat(self):
         """Cheat the game."""
         self.dicehand1.which_players_turn().set_total_score(100)
+        self.is_over = True
 
     def player_play(self):
         """Player play."""
@@ -63,8 +64,7 @@ class Game:
                 cheater = input("Cheat(x) or Change name(n): ").lower()
                 if cheater == "x":
                     self.cheat()
-                    self.is_over = True
-                    break
+                    self.current_turn().turn_over = True
 
                 elif cheater == "n":
                     new_name = input("Enter your new name: ")
