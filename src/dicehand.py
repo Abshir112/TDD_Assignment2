@@ -1,15 +1,15 @@
 """This module contains the dicehand class and its methods."""
 
-import dice
-import player
+from dice import Dice
+from player import Player
 
 
-class dicehand:
+class Dicehand:
     """This class represents a dicehand."""
 
-    player1 = player.player("player1", 0)
-    player2 = player.player("player2", 0)
-    dice1 = dice.dice(6)
+    player1 = Player("player1", 0)
+    player2 = Player("player2", 0)
+    dice1 = Dice(6)
     gamechanger = 1
     player_list = []
 
@@ -19,7 +19,7 @@ class dicehand:
         self.dice1 = dice1
         self.score = 0
         self.turn_over = False
-        dicehand.player_list.append(self)
+        Dicehand.player_list.append(self)
 
     def set_score(self, score):
         """Set the score."""
@@ -31,8 +31,8 @@ class dicehand:
 
     def roll(self):
         """Roll the dice."""
-        roll = dicehand.dice1.roll_dice()
-        if roll == dicehand.gamechanger:
+        roll = Dicehand.dice1.roll_dice()
+        if roll == Dicehand.gamechanger:
             self.set_score(0)
             self.turn_over = True
         else:

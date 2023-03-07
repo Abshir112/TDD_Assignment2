@@ -2,7 +2,7 @@
 import random
 
 
-class dice:
+class Dice:
     """This class represents a dice."""
 
     def __init__(self, dice):

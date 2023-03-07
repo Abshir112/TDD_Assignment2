@@ -2,3 +2,4 @@ flake8
 pdoc
 pylint
 coverage
+coloma

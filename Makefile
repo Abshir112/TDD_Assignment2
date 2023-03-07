@@ -21,8 +21,36 @@ build-toml: install-toml
 	$(PYTHON) -m pip install --upgrade -q pip
 	$(PYTHON) -m build
 
+# ---------------------------------------------------------
+# Cleanup generated and installed files.
+
+clean: 
+	find . -name '*.coverage *.pyc' -exec rm -f {} + 
+	find . -name '__pycache__' -exec rm -fr {} +
+	rm -rf .coverage htmlcov 
+
+
+clean-all: clean-build clean-pyc clean-test clean-doc clean-src clean-venv
+
+clean-docs:
+	rm -rf docs/build
+
+clean-build:
+	rm -fr build/
+	rm -fr dist/
+	rm -fr .eggs/
+	find . -name '*.egg-info' -exec rm -fr {} +
+	find . -name '*.egg' -exec rm -f {} +
+
+clean-src:
+	find . -name '*.pyc' -exec rm -f {} +
+	find . -name '*.pyo' -exec rm -f {} +
+	find . -name '*~' -exec rm -f {} +
+	find . -name '__pycache__' -exec rm -fr {} +
+
+
 run: check-venv
-	@$(PYTHON) app/main.py
+	@$(PYTHON) src/main.py
 
 check-venv:
 	@if [ -z "$$(which python | grep -o .venv)" ]; then \
@@ -30,7 +58,7 @@ check-venv:
 	fi
 
 pylint: check-venv
-	@find app/ -name '*.py' -print0 | xargs -0 pylint -d C0103 -rn
+	@find src/ -name '*.py' -print0 | xargs -0 pylint -d C0103 -rn
 
 test: check-venv
 	$(PYTHON) -m unittest discover -p 'test_*.py' -v -b
@@ -38,3 +66,39 @@ test: check-venv
 flake8: check-venv
 	@$(call MESSAGE,$@)
 	-flake8 --exclude=.svn,CVS,.bzr,.hg,.git,__pycache__,.tox,.nox,.eggs,*.egg,.venv,venv,*.pyc
+
+black: check-venv
+	@$(call MESSAGE,$@)
+	-black --check --diff src/ tests/
+
+coverage: check-venv
+	@$(call MESSAGE,$@)
+	-coverage run -m unittest discover -p 'test_*.py' -v -b
+	-coverage html
+	-coverage report -m
+
+cohesion: check-venv
+	@$(call MESSAGE,$@)
+	-$(PYTHON) -m radon cc src/ -a -nc
+
+.PHONY: pydoc 
+pydoc: check-venv
+	@$(call MESSAGE,$@)
+	-$(PYTHON) -m pydoc -w src/*.py
+
+pdoc: check-venv
+	@$(call MESSAGE,$@)
+	-$(PYTHON) -m pdoc --html --output-dir docs/ src/*.py
+
+pyreverse: check-venv
+	@$(call MESSAGE,$@)
+	-install -d docs/pyreverse
+	-$(PYTHON) -m pyreverse -o png -p pyreverse src/*.py
+	
+
+doc: check-venv
+	@$(call MESSAGE,$@)
+	-pdoc pyreverse
+
+lint: flake8 check-venv
+	@$(call MESSAGE,$@)
