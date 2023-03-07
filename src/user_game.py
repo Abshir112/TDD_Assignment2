@@ -41,6 +41,7 @@ class UserGame:
         player3 = Player("computer", 0)
         dice1 = Dice(6)
         dicehand1 = Dicehand(player1, dice1)
+        p1 = dicehand1.which_players_turn()
         dicehand3 = Intelligence(player3, dice1)
         game1 = Game(dicehand1, dicehand3)
         while game1.is_over is not True:
@@ -48,13 +49,14 @@ class UserGame:
                 game1.player_play()
                 if dicehand1.turn_over is True:
                     game1.start_next_turn()
-            while dicehand3.turn_over is not True and dicehand1.which_players_turn().has_won is False:
+            while dicehand3.turn_over is not True and p1.has_won is False:
                 dicehand3.computer_play()
                 if dicehand3.turn_over is True:
                     game1.start_next_turn()
                 if dicehand3.which_players_turn().get_total_score() >= target:
                     dicehand3.which_players_turn().has_won = True
-                    print(f'\n{dicehand3.which_players_turn().get_name()} is winner')
+                    print(f'\n{dicehand3.which_players_turn().get_name()} \
+is winner')
                     game1.is_over = True
                     break
 
@@ -67,15 +69,17 @@ class UserGame:
         player2.set_name(choose_name_p2)
         dice1 = Dice(6)
         dicehand1 = Dicehand(player1, dice1)
+        p1 = dicehand1.which_players_turn()
         dicehand2 = Intelligence(player2, dice1)
+        p2 = dicehand2.which_players_turn()
         game1 = Game(dicehand1, dicehand2)
         while game1.is_over is not True:
             while dicehand1.turn_over is not True:
                 game1.player_play()
-                if dicehand1.turn_over is True and dicehand2.which_players_turn().has_won is False:
+                if dicehand1.turn_over is True and p2.has_won is False:
                     game1.start_next_turn()
 
-            while dicehand2.turn_over is not True and dicehand1.which_players_turn().has_won is False:
+            while dicehand2.turn_over is not True and p1.has_won is False:
                 game1.player_play()
                 if game1.current_turn().turn_over is True:
                     game1.start_next_turn()

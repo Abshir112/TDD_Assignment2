@@ -45,6 +45,7 @@ class Game:
 
     def player_play(self):
         """Player play."""
+        target = Game.POINTS_TO_WIN
         while self.current_turn().turn_over is not True:
             p1 = self.current_turn().which_players_turn()
             print(f"It's {p1.get_name()} turn")
@@ -52,7 +53,8 @@ class Game:
             if user_inp == "roll":
                 print(f"{p1.get_name()} choose to play")
                 print(f"{p1.get_name()} rolled {self.current_turn().roll()}")
-                print(f"\n{p1} turn score is: {self.current_turn().get_score()}")
+                print(f"\n{p1} turn score is: \
+{self.current_turn().get_score()}")
             elif user_inp == "hold":
                 print(f"{p1.get_name()} choose to hold")
                 self.current_turn().end_turn()
@@ -67,7 +69,8 @@ class Game:
                 elif cheater == "n":
                     new_name = input("Enter your new name: ")
                     self.current_turn().which_players_turn().set_name(new_name)
-            if self.current_turn().which_players_turn().get_total_score() >= Game.POINTS_TO_WIN:
+            contestant = self.current_turn().which_players_turn()
+            if contestant.get_total_score() >= target:
                 self.current_turn().which_players_turn().has_won = True
                 print(f'{self.current_turn().which_players_turn().get_name()} \
 is winner')
