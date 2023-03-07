@@ -8,7 +8,7 @@ from dicehand import Dicehand
 class Game:
     """This class represents a game."""
 
-    POINTS_TO_WIN = 10
+    POINTS_TO_WIN = 100
     dice1 = Dice(6)
     player1 = Player("p1", 0)
     player2 = Player("p2", 0)
@@ -39,10 +39,14 @@ class Game:
         """Check if the game is over."""
         return self.is_over
 
-    def cheat(self):
-        """Cheat the game."""
-        self.dicehand1.which_players_turn().set_total_score(100)
-        self.is_over = True
+    def cheat_and_endgame(self):
+        """Cheat and end the game."""
+        if self.current_turn() == self.dicehand1:
+            self.dicehand1.which_players_turn().set_total_score(100)
+            self.is_over = True
+        else:
+            self.dicehand2.which_players_turn().set_total_score(100)
+            self.is_over = True
 
     def player_play(self):
         """Player play."""
@@ -63,7 +67,8 @@ class Game:
             else:
                 cheater = input("Cheat(x) or Change name(n): ").lower()
                 if cheater == "x":
-                    self.cheat()
+                    self.cheat_and_endgame()
+                    print(p1)
                     self.current_turn().turn_over = True
 
                 elif cheater == "n":
