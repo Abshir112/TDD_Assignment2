@@ -11,7 +11,6 @@ class Dicehand:
     player2 = Player("player2", 0)
     dice1 = Dice(6)
     gamechanger = 1
-    player_list = []
 
     def __init__(self, player1, dice1):
         """Initialize the dicehand."""
@@ -19,7 +18,6 @@ class Dicehand:
         self.dice1 = dice1
         self.score = 0
         self.turn_over = False
-        Dicehand.player_list.append(self)
 
     def set_score(self, score):
         """Set the score."""

@@ -22,6 +22,7 @@ class TestDice(unittest.TestCase):
         dice = Dice(6)
         self.assertTrue(dice.roll_dice() in range(1, 7))
         self.assertIsInstance(dice.roll_dice(), int)
+        self.assertNotEqual(dice.roll_dice(), 0)
 
     def test_roll_dice_1(self):
         """Test the roll dice method."""
