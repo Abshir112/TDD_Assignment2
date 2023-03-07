@@ -1,4 +1,4 @@
-"""Main module for the game."""
+"""This module contains the user game interface."""
 
 from game import Game
 from dice import Dice
@@ -27,14 +27,27 @@ class UserGame:
 
     def play(self):
         """Play the game."""
+        invalid = True
+        while invalid:
+            if self.game_type == "1" or self.game_type == "2":
+                invalid = False
+            elif self.game_type == "3":
+                invalid = False
+            else:
+                print("Invalid choice")
+                print("Please choose again(1,2,3)\n")
+                self.game_type = input("Enter your choice(1, 2, 3): ")
+
         if self.game_type == "1":
-            self.p_vs_p()
+            self.player_vs_player()
         elif self.game_type == "2":
-            self.p_vs_c()
+            self.player_vs_computer()
         elif self.game_type == "3":
             print("Goodbye!")
+            print("Thank you for playing")
+            print("See you next time")
 
-    def p_vs_c(self):
+    def player_vs_computer(self):
         """Player vs computer."""
         target = Game.POINTS_TO_WIN
         choose_name = input("Enter Your name: ")
@@ -64,7 +77,7 @@ is winner"
                     game1.is_over = True
                     break
 
-    def p_vs_p(self):
+    def player_vs_player(self):
         choose_name_p1 = input("Enter name (player_1): ")
         player1 = Player("", 0)
         player1.set_name(choose_name_p1)
