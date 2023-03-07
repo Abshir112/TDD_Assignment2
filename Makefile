@@ -89,16 +89,11 @@ pydoc: check-venv
 pdoc: check-venv
 	@$(call MESSAGE,$@)
 	-$(PYTHON) -m pdoc --html --output-dir docs/ src/*.py
-
-pyreverse: check-venv
-	@$(call MESSAGE,$@)
-	-install -d docs/pyreverse
-	-$(PYTHON) -m pyreverse -o png -p pyreverse src/*.py
 	
 
 doc: check-venv
 	@$(call MESSAGE,$@)
-	-pdoc pyreverse
+	-$(PYTHON) -m pdoc --html --output-dir docs/ src/*.py 
 
 lint: flake8 check-venv
 	@$(call MESSAGE,$@)
