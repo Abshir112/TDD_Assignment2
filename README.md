@@ -28,7 +28,8 @@ This is a general template for any Python project you want to start working on.
 *Here you can add a description for your project and its purpose*
 
 ## 🏁 Getting Started <a name = "getting_started">
-<img src = "src\dice.gif" width = "50px" height = "50px">
+<h1> Lets Play PIG DICE GAME
+<img src = "src\dice.gif" width = "80px" height = "70px">
 </a>
 
 ### Installing Dependency
@@ -58,15 +59,14 @@ This is a general template for any Python project you want to start working on.
 Check what version of Python you have. The Makefile uses `PYTHON=python` as default.
 
 
-<h1>Check you Python installation<h1>
-<h3 align = "center"> <b>make version</b> </h3>
+<h1>Check make installation<h1>
 <h5>If you have another naming of the Python executable then you can solve that using an environment variable. This is common on Mac and Linux.
-chocolatey is the package manager/ installer which is used to install make(Note: Run Powershell as administrator)Then use the command:
+Chocolatey is the package manager/ installer which is used to install make(Note: Run Powershell as administrator)Then use the command:
 <h3>choco install make </h3> so that make is installed in computer.
 To check whether we installed make succesfully and also which version of make we have </h5>
 <h3>make version </h3>
 <h1>Python virtual environment<h1>
-<p>Install a Python virtual environment and activate it.<p>
+<h5>Install a Python virtual environment and activate it.</h5>
 <h1>Activate on Windows</h1>
 <h3 align= "center">. .venv/Scripts/activate</h3>
 <h1>Activate on Linx/Mac</h1>
@@ -104,7 +104,7 @@ Do not forget to check that you have an active venv.
 # Remove files generated for tests or caching
 <h3 align = "center"> <b> make clean </b> </h3>
 # Do also remove all you have installed
-<h3 align = "center" > <b> make clean all </b> </h3>
+<h3 align = "center" > <b> make clean-all </b> </h3>
 
 <h1>Codestyle with black</h1>
 You can unify the codestyle using black. Running black will change your source code to have a codestyle according to black codestyle.
