@@ -26,18 +26,18 @@ Our dicegame project is created using Object Oriented Programming principles. <b
 There are 7 class totally used in project <br>
 <b>Dice class: </b> <br>
 Defines the dice faces which is 6; randomly rolls between die faces 1 to 6
-<b>Player class: </b> To keep track of player name and their score(Total score)
+<b>Player class: </b> To keep track of player name and their score(Total score) <br>
 <b>Dicehand class: </b> <br>
 Each round in the game player decides to roll/ hold
 If player rolls gamechanger (dice face 1), directly set player turn score to 0 and end their turn.
 If player rolls between 2 to 6, the die face rolled will be set as their turn score,
 next throw is accumulated to turn total until  he volunteer to hold or he rolls 1.
-If player wants to hold then their overall turn score must be added to their total score and turn is ended for current player
+If player wants to hold then their overall turn score must be added to their total score and turn is ended for current player <br>
 <b>Game class: </b> <br>
 This is an interesting class, where two dicehand competite against each other.
 We are keeping track of which player's turn ongoing, when player holds or rolls 1 we swap the turn here.
 We also have cheat code in this class, player cheats and wins the game.
-Player
+Player <br>
 </h4>
 
 ## 🏁 Getting Started <a name = "getting_started">
