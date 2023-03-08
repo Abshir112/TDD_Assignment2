@@ -29,6 +29,7 @@ class Intelligence(Dicehand):
                 print("Computer choose to hold")
                 self.end_turn()
                 print(p3)
+                print()
 
     def __str__(self):
         """Return the string representation of the intelligence."""

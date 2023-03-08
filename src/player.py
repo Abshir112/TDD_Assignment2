@@ -28,7 +28,7 @@ class Player:
     def __str__(self):
         """Return the string representation of the player."""
         return f"The player is {self.name}\n\
-their total score is: {self.score}"
+Total score is: {self.score}"
 
     def set_total_score(self, score):
         """Set the total score."""

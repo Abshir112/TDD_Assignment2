@@ -53,7 +53,7 @@ class Game:
         target = Game.POINTS_TO_WIN
         while self.current_turn().turn_over is not True:
             p1 = self.current_turn().which_players_turn()
-            print(f"It's {p1.get_name()} turn")
+            print(f"\nIt's {p1.get_name()} turn")
             user_inp = input("(help) roll/hold: ").lower()
 
             inputs = ["roll", "hold", "help"]
@@ -66,12 +66,13 @@ class Game:
                 print(f"{p1.get_name()} rolled {self.current_turn().roll()}")
                 print(
                     f"\n{p1} turn score is: \
-{self.current_turn().get_score()}"
+{self.current_turn().get_score()}\n"
                 )
             elif user_inp == "hold":
                 print(f"{p1.get_name()} choose to hold")
                 self.current_turn().end_turn()
                 print(p1)
+                print()
             else:
                 cheater = input("Cheat(x) or Change name(n): ").lower()
                 valid_cheat = ["x", "n"]
