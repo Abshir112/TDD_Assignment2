@@ -11,9 +11,9 @@
 - [🧐 About ](#-about-)
 - [👨‍💻 Description ](#-description-)
 - [🏁 Getting Started ](#-getting-started-)
-  - [Installing Dependency ](#-Install_dependency-)
-  - [Installing the game](#-how_to_install_game-)
-  - [Usage](#usage)
+- [Installing Dependency ](#-Install_dependency-)
+- [Installing the game](#-how_to_install_game-)
+- [Usage](#usage)
 - [⛏️ Built Using ](#️-built-using-)
 - [✍️ Authors ](#️-authors-)
 
