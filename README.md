@@ -67,7 +67,7 @@ each class should have. Side by side we have planned for the test cases and impl
 
 ## 🏁 Getting Started <a name = "getting_started">
 <h1> Lets Play PIG DICE GAME
-<img src = "src\dice.gif" width = "80px" height = "70px">
+<img src = "src\img\dice.gif" width = "80px" height = "70px">
 </a>
 
 ### Installing Game
