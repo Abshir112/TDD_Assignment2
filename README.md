@@ -1,11 +1,9 @@
 <h1 align="center">Pig (dice game)</h1>
 
 <p align="left">
-  Here you should add general information about the project
-  <br> 
+  Test Driven Development
 </p>
 
-## 📝 Table of Contents
 
 - [📝 Table of Contents](#-table-of-contents)
 - [🧐 About ](#-about-)
