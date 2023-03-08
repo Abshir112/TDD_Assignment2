@@ -9,7 +9,7 @@ class Intelligence(Dicehand):
 
     def play(self):
         """Choose to play or hold."""
-        mylist = ["roll", "hold", "roll", "roll"]
+        mylist = ["roll", "hold", "roll", "roll", "hold", "hold", "hold"]
         chosen = random.choice(mylist)
         return chosen
 
