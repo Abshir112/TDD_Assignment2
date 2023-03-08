@@ -44,7 +44,7 @@ We are keeping track of which player's turn is ongoing, when player holds or rol
 Also here when one player's turn gets over we have functions to start next players turn
 We also have cheat code in this class, player cheats and wins the game.
 Player name change functionality while game is ongoing has also been added. <br>
-<b>Intelligence Class</b> <img src = "src\robot.png" width = "80px" height = "70px"> <br>
+<b>Intelligence Class</b> <img src = "src\robot.png" width = "30px" height = "20px"> 
 This Intelligence class inherits from another class called Dicehand. The Intelligence class represents the computer player in a game of pig. The play method randomly chooses whether the computer player should roll the dice or hold, and the "computer_play" method simulates the computer player's turn.
 Particularly we are giving more weightage to hold and play wisely the greedy pig game
 so that our computer chooses to hold if they have attained some highest turn total instead of rolling 1 and loosing all turn scores.<br>
