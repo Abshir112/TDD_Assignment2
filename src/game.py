@@ -8,7 +8,7 @@ from dicehand import Dicehand
 class Game:
     """This class represents a game."""
 
-    POINTS_TO_WIN = 20
+    POINTS_TO_WIN = 100
     dice1 = Dice(6)
     player1 = Player("p1", 0)
     player2 = Player("p2", 0)
@@ -34,10 +34,6 @@ class Game:
         else:
             self.current = self.dicehand1
             self.current.turn_over = False
-
-    def is_over(self):
-        """Check if the game is over."""
-        return self.is_over
 
     def cheat_and_endgame(self):
         """Cheat and end the game."""

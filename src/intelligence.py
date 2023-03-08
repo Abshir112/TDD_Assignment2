@@ -6,8 +6,6 @@ from dicehand import Dicehand
 
 class Intelligence(Dicehand):
     """This class represents the intelligence of the game."""
-    def __init__(self, player1, dice1):
-        super().__init__(player1, dice1)
 
     def play(self):
         """Choose to play or hold."""
@@ -30,7 +28,3 @@ class Intelligence(Dicehand):
                 self.end_turn()
                 print(p3)
                 print()
-
-    def __str__(self):
-        """Return the string representation of the intelligence."""
-        return super().__str__()
