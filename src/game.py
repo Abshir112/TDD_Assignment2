@@ -62,7 +62,7 @@ class Game:
                 user_inp = input("(help) roll/hold: ").lower()
 
             if user_inp == "roll":
-                print(f"{p1.get_name()} choose to play")
+                print(f"\n{p1.get_name()} rolling dice......")
                 print(f"{p1.get_name()} rolled {self.current_turn().roll()}")
                 print(
                     f"\n{p1} turn score is: \
@@ -74,6 +74,11 @@ class Game:
                 print(p1)
             else:
                 cheater = input("Cheat(x) or Change name(n): ").lower()
+                valid_cheat = ["x", "n"]
+                while cheater not in valid_cheat:
+                    print("Invalid input, try again (x), (n)")
+                    cheater = input("Cheat(x) or Change name(n): ").lower()
+
                 if cheater == "x":
                     self.cheat_and_endgame()
                     print(p1)

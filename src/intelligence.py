@@ -21,7 +21,7 @@ class Intelligence(Dicehand):
         print(f"It's {p3.get_name()} turn")
         while self.turn_over is not True and p3.has_won is False:
             if self.play() == "roll":
-                print("Computer Choose to play")
+                print("\nComputer rolling dice...")
                 roll = self.roll()
                 print(f"{p3.get_name()} rolled {roll}")
                 print(f"\n{p3} turn score is: {self.get_score()}")
