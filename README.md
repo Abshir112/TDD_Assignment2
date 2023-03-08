@@ -14,11 +14,17 @@
 - [✍️ Authors ](#️-authors-)
 
 ## 🧐 About <a name = "about"></a>
+<h3> PIG DICE GAME</h3> <br>
+<h5> Pig is a simple dice game first described in print by John Scarne in 1945. Players take turns to roll a single dice as many times as they wish, adding all roll results to a running total, but losing their gained score for the turn if they roll a 1.</h5> <br>
+<h3>Rules to play the pig dice game</h3> <br>
+<h4>
+Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold":
 
-This is a general template for any Python project you want to start working on.
-
-*Here you can add 1-2 paragraphs on information about the project*
-
+If the player rolls a 1, they score nothing and it becomes the next player's turn.
+If the player rolls any other number, it is added to their turn total and the player's turn continues.
+If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.
+The first player to score 100 or more points wins.
+</h4> <br>
 ## 👨‍💻 Description <a name = "description"></a>
 <h4>
 Our dicegame project is created using Object Oriented Programming principles. <br>
