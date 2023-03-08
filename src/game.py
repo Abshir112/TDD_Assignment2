@@ -8,7 +8,7 @@ from dicehand import Dicehand
 class Game:
     """This class represents a game."""
 
-    POINTS_TO_WIN = 100
+    POINTS_TO_WIN = 20
     dice1 = Dice(6)
     player1 = Player("p1", 0)
     player2 = Player("p2", 0)

@@ -65,7 +65,8 @@ class UserGame:
                 game1.player_play()
                 if self.dicehand1.turn_over is True:
                     game1.start_next_turn()
-            while self.dicehand3.turn_over is False and self.player1.has_won is False:
+            player_1_won = self.player1.has_won
+            while self.dicehand3.turn_over is False and player_1_won is False:
                 self.dicehand3.computer_play()
                 if self.dicehand3.turn_over is True:
                     game1.start_next_turn()
@@ -90,10 +91,12 @@ is winner"
         while game1.is_over is not True:
             while self.dicehand1.turn_over is not True:
                 game1.player_play()
-                if self.dicehand1.turn_over is True and self.playe2.has_won is False:
+                dicehand_1 = self.dicehand1.turn_over
+                if dicehand_1 is True and self.playe2.has_won is False:
                     game1.start_next_turn()
 
-            while dicehand2.turn_over is not True and self.player1.has_won is False:
+            dicehand_2 = self.dicehand2.turn_over
+            while dicehand_2 is not True and self.player1.has_won is False:
                 game1.player_play()
                 if game1.current_turn().turn_over is True:
                     game1.start_next_turn()
