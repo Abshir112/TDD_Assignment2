@@ -31,7 +31,7 @@ Our dicegame project is created using Object Oriented Programming principles. <b
 There are 7 class totally used in project <br>
 <b>Dice class: </b> <br>
 Defines the dice faces which is 6; randomly rolls between die faces 1 to 6 <br>
-<b>Player class: </b> To keep track of player name and their score(Total score) <br>
+<b>Player class: 👩‍💻 </b> To keep track of player name and their score(Total score) <br>
 <b>Dicehand class: 🔁 </b> <br>
 Each round in the game player decides to roll/ hold
 If player rolls gamechanger (dice face 1), directly set player turn score to 0 and end their turn.
@@ -44,11 +44,11 @@ We are keeping track of which player's turn is ongoing, when player holds or rol
 Also here when one player's turn gets over we have functions to start next players turn
 We also have cheat code in this class, player cheats and wins the game.
 Player name change functionality while game is ongoing has also been added. <br>
-<b>Intelligence Class</b> <img src = "src\robot.png" width = "30px" height = "20px"> 
+<b>Intelligence Class 🤖</b> 
 This Intelligence class inherits from another class called Dicehand. The Intelligence class represents the computer player in a game of pig. The play method randomly chooses whether the computer player should roll the dice or hold, and the "computer_play" method simulates the computer player's turn.
 Particularly we are giving more weightage to hold and play wisely the greedy pig game
 so that our computer chooses to hold if they have attained some highest turn total instead of rolling 1 and loosing all turn scores.<br>
-<b>Usergame Class</b> <br>
+<b>Usergame Class ⌨️</b> <br>
 UserGame class represents the user interface for playing a game Pig Dice.
 We have added player VS computer functionality, which starts a game of Pig Dice with one human player and one computer player. The human player and the computer player each have their own dicehand, which represents their current hand of dice. The game continues until either player reaches the target score of 100 points.
 We also added player VS player functionality, which starts a game of Pig Dice with two human players.Each player has their own Dicehand, and the game continues until one of the players reaches the target score of 100 points.<br>
