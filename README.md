@@ -43,11 +43,22 @@ Player name change functionality while game is ongoing has also been added. <br>
 This Intelligence class inherits from another class called Dicehand. The Intelligence class represents the computer player in a game of pig. The play method randomly chooses whether the computer player should roll the dice or hold, and the "computer_play" method simulates the computer player's turn.
 Particularly we are giving more weightage to hold and play wisely the greedy pig game
 so that our computer chooses to hold if they have attained some highest turn total instead of rolling 1 and loosing all turn scores.<br>
-<b>usergame Class</b> <br>
+<b>Usergame Class</b> <br>
 UserGame class represents the user interface for playing a game Pig Dice.
 We have added player VS computer functionality, which starts a game of Pig Dice with one human player and one computer player. The human player and the computer player each have their own dicehand, which represents their current hand of dice. The game continues until either player reaches the target score of 100 points.
 We also added player VS player functionality, which starts a game of Pig Dice with two human players.Each player has their own Dicehand, and the game continues until one of the players reaches the target score of 100 points.<br>
+<b>Main Class</b> <br>
+In this class we are running our pig dice game.
 </h4>
+<h3> As we also included Test suites for each modules which we used for development.
+</h3>
+<h2>White box testing - "Test the code knowing exactly how it look like" Unit testing is white box testing. </h2>
+<h3> For testing purpose we used unit testing in python </h3>
+<h2> Strategy</h2>
+<h3> Test driven development 🧐
+We planned how many classes we will be having for game, then planned for what functionality
+each class should have. Side by side we have planned for the test cases and implemented the testcases to check whether functions works as indented, then we added more code to make the testcases pass.
+</h3>
 
 ## 🏁 Getting Started <a name = "getting_started">
 <h1> Lets Play PIG DICE GAME
@@ -68,7 +79,6 @@ We also added player VS player functionality, which starts a game of Pig Dice wi
 
 ### Check version of Python
 Check what version of Python you have. The Makefile uses `PYTHON=python` as default.
-
 
 <h1>Check make installation<h1>
 <h5>If you have another naming of the Python executable then you can solve that using an environment variable. This is common on Mac and Linux.
