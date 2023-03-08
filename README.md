@@ -25,7 +25,7 @@ Our dicegame project is created using Object Oriented Programming principles. <b
 <h3>Progamming Language Used: Python.</h3> <br>
 There are 7 class totally used in project <br>
 <b>Dice class: </b> <br>
-Defines the dice faces which is 6; randomly rolls between die faces 1 to 6
+Defines the dice faces which is 6; randomly rolls between die faces 1 to 6 <br>
 <b>Player class: </b> To keep track of player name and their score(Total score) <br>
 <b>Dicehand class: </b> <br>
 Each round in the game player decides to roll/ hold
