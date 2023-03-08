@@ -4,8 +4,6 @@
 class Player:
     """This class represents a player."""
 
-    player_info = {}
-
     def __init__(self, name, score):
         """Initialize the player."""
         self.name = name

@@ -12,6 +12,14 @@ class UserGame:
 
     def __init__(self):
         """Initialize the user game."""
+        self.target = Game.POINTS_TO_WIN
+        self.player1 = Player("", 0)
+        self.playe2 = Player("", 0)
+        self.player3 = Player("computer", 0)
+        self.dice1 = Dice(6)
+        self.dicehand1 = Dicehand(self.player1, self.dice1)
+        self.dicehand2 = Dicehand(self.playe2, self.dice1)
+        self.dicehand3 = Intelligence(self.player3, self.dice1)
         self.game_type = None
 
     def choose_game_type(self):
@@ -49,29 +57,22 @@ class UserGame:
 
     def player_vs_computer(self):
         """Player vs computer."""
-        target = Game.POINTS_TO_WIN
         choose_name = input("\nEnter Your name: ")
-        player1 = Player("", 0)
-        player1.set_name(choose_name)
-        player3 = Player("computer", 0)
-        dice1 = Dice(6)
-        dicehand1 = Dicehand(player1, dice1)
-        p1 = dicehand1.which_players_turn()
-        dicehand3 = Intelligence(player3, dice1)
-        game1 = Game(dicehand1, dicehand3)
+        self.player1.set_name(choose_name)
+        game1 = Game(self.dicehand1, self.dicehand3)
         while game1.is_over is not True:
-            while dicehand1.turn_over is not True:
+            while self.dicehand1.turn_over is not True:
                 game1.player_play()
-                if dicehand1.turn_over is True:
+                if self.dicehand1.turn_over is True:
                     game1.start_next_turn()
-            while dicehand3.turn_over is not True and p1.has_won is False:
-                dicehand3.computer_play()
-                if dicehand3.turn_over is True:
+            while self.dicehand3.turn_over is False and self.player1.has_won is False:
+                self.dicehand3.computer_play()
+                if self.dicehand3.turn_over is True:
                     game1.start_next_turn()
-                if dicehand3.which_players_turn().get_total_score() >= target:
-                    dicehand3.which_players_turn().has_won = True
+                if self.player3.get_total_score() >= self.target:
+                    self.dicehand3.which_players_turn().has_won = True
                     print(
-                        f"\n{dicehand3.which_players_turn().get_name()} \
+                        f"\n{self.dicehand3.which_players_turn().get_name()} \
 is winner"
                         )
                     game1.is_over = True
@@ -79,24 +80,20 @@ is winner"
 
     def player_vs_player(self):
         choose_name_p1 = input("\nEnter name (player_1): ")
-        player1 = Player("", 0)
-        player1.set_name(choose_name_p1)
+        self.player1.set_name(choose_name_p1)
         choose_name_p2 = input("Enter name (player_2): ")
-        player2 = Player("", 0)
-        player2.set_name(choose_name_p2)
-        dice1 = Dice(6)
-        dicehand1 = Dicehand(player1, dice1)
-        p1 = dicehand1.which_players_turn()
-        dicehand2 = Intelligence(player2, dice1)
-        p2 = dicehand2.which_players_turn()
-        game1 = Game(dicehand1, dicehand2)
+        self.playe2.set_name(choose_name_p2)
+        self.player1 = self.dicehand1.which_players_turn()
+        dicehand2 = Intelligence(self.playe2, self.dice1)
+        self.playe2 = dicehand2.which_players_turn()
+        game1 = Game(self.dicehand1, self.dicehand2)
         while game1.is_over is not True:
-            while dicehand1.turn_over is not True:
+            while self.dicehand1.turn_over is not True:
                 game1.player_play()
-                if dicehand1.turn_over is True and p2.has_won is False:
+                if self.dicehand1.turn_over is True and self.playe2.has_won is False:
                     game1.start_next_turn()
 
-            while dicehand2.turn_over is not True and p1.has_won is False:
+            while dicehand2.turn_over is not True and self.player1.has_won is False:
                 game1.player_play()
                 if game1.current_turn().turn_over is True:
                     game1.start_next_turn()
