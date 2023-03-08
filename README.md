@@ -26,7 +26,9 @@ This is a general template for any Python project you want to start working on.
 
 *Here you can add a description for your project and its purpose*
 
-## 🏁 Getting Started <a name = "getting_started"></a>
+## 🏁 Getting Started <a name = "getting_started">
+<img src = "image.png">
+</a>
 
 ### Installing
 

@@ -87,6 +87,7 @@ class Game:
 
                 elif cheater == "n":
                     new_name = input("Enter your new name: ")
+                    new_name.upper()
                     self.current_turn().which_players_turn().set_name(new_name)
             contestant = self.current_turn().which_players_turn()
             if contestant.get_total_score() >= target:
