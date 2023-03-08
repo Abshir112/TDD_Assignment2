@@ -58,12 +58,12 @@ This is a general template for any Python project you want to start working on.
 Check what version of Python you have. The Makefile uses `PYTHON=python` as default.
 
 
-<h1>Check you Python installation<h1>
+<h4>Check you Python installation<h4>
 make version
-<p>If you have another naming of the Python executable then you can solve that using an environment variable. This is common on Mac and Linux.
+<h5>If you have another naming of the Python executable then you can solve that using an environment variable. This is common on Mac and Linux.
 chocolatey is the package manager/ installer which is used to install make(Note: Run Powershell as administrator and then use the command choco install make so make is installed in our computer )
 To check whether we installed make succesfully and also which version of make we have
-make version </p>
+make version </h5>
 <h1>Python virtual environment<h1>
 <p>Install a Python virtual environment and activate it.<p>
 <h1>Activate on Windows</h1>
