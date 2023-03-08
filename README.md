@@ -28,7 +28,7 @@ This is a general template for any Python project you want to start working on.
 *Here you can add a description for your project and its purpose*
 
 ## 🏁 Getting Started <a name = "getting_started">
-<img src = "src\dice.gif" width = "10px" height = "10px">
+<img src = "src\dice.gif" width = "50px" height = "50px">
 </a>
 
 ### Installing Dependency
@@ -61,9 +61,10 @@ Check what version of Python you have. The Makefile uses `PYTHON=python` as defa
 <h1>Check you Python installation<h1>
 <h3 align = "center"> <b>make version</b> </h3>
 <h5>If you have another naming of the Python executable then you can solve that using an environment variable. This is common on Mac and Linux.
-chocolatey is the package manager/ installer which is used to install make(Note: Run Powershell as administrator and then use the command <b>choco install make <b> so make is installed in our computer )
-To check whether we installed make succesfully and also which version of make we have
-make version </h5>
+chocolatey is the package manager/ installer which is used to install make(Note: Run Powershell as administrator)Then use the command:
+<h3>choco install make </h3> so that make is installed in computer.
+To check whether we installed make succesfully and also which version of make we have </h5>
+<h3>make version </h3>
 <h1>Python virtual environment<h1>
 <p>Install a Python virtual environment and activate it.<p>
 <h1>Activate on Windows</h1>
