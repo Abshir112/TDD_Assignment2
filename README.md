@@ -28,6 +28,15 @@ This is a general template for any Python project you want to start working on.
 <img src = "src\dice.gif" width = "80px" height = "70px">
 </a>
 
+### Installing Game
+*Here you can add a description on how to install the project*
+
+### Usage
+
+*Here you can add a description on how to run and use the project*
+
+## ⛏️ Built Using <a name = "built_using"></a>
+
 <h2>Installing Dependency </h2>
 *These are essential tools to install before even downloading the game*
 
@@ -86,18 +95,6 @@ Do not forget to check that you have an active venv.
 You can unify the codestyle using black. Running black will change your source code to have a codestyle according to black codestyle.
 <h3 align = "center"> <b> make black </b> </h3>
 
-
-### Installing Game
-*Here you can add a description on how to install the project*
-
-### Usage
-
-*Here you can add a description on how to run and use the project*
-
-
-## ⛏️ Built Using <a name = "built_using"></a>
-
-*Here you can link the packages/modules/dependencies used to build your project*
 
 ## ✍️ Authors <a name = "authors"></a>
 
