@@ -55,10 +55,10 @@ In this class we are running our pig dice game.
 <h2>White box testing - "Test the code knowing exactly how it look like" Unit testing is white box testing. </h2>
 <h3> For testing purpose we used unit testing in python </h3>
 <h2> Strategy</h2>
-<h3> Test driven development 🧐
+<h4> Test driven development 🧐
 We planned how many classes we will be having for game, then planned for what functionality
 each class should have. Side by side we have planned for the test cases and implemented the testcases to check whether functions works as indented, then we added more code to make the testcases pass.
-</h3>
+</h4>
 
 ## 🏁 Getting Started <a name = "getting_started">
 <h1> Lets Play PIG DICE GAME
