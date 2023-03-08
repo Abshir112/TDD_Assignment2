@@ -34,7 +34,7 @@ class UserGame:
             elif self.game_type == "3":
                 invalid = False
             else:
-                print("Invalid choice")
+                print("\nInvalid choice")
                 print("Please choose again(1,2,3)\n")
                 self.game_type = input("Enter your choice(1, 2, 3): ")
 
@@ -43,14 +43,14 @@ class UserGame:
         elif self.game_type == "2":
             self.player_vs_computer()
         else:
-            print("Goodbye!")
+            print("\nGoodbye!")
             print("Thank you for playing")
             print("See you next time")
 
     def player_vs_computer(self):
         """Player vs computer."""
         target = Game.POINTS_TO_WIN
-        choose_name = input("Enter Your name: ")
+        choose_name = input("\nEnter Your name: ")
         player1 = Player("", 0)
         player1.set_name(choose_name)
         player3 = Player("computer", 0)
@@ -78,7 +78,7 @@ is winner"
                     break
 
     def player_vs_player(self):
-        choose_name_p1 = input("Enter name (player_1): ")
+        choose_name_p1 = input("\nEnter name (player_1): ")
         player1 = Player("", 0)
         player1.set_name(choose_name_p1)
         choose_name_p2 = input("Enter name (player_2): ")
