@@ -61,7 +61,7 @@ Check what version of Python you have. The Makefile uses `PYTHON=python` as defa
 <h4>Check you Python installation<h4>
 make version
 <h5>If you have another naming of the Python executable then you can solve that using an environment variable. This is common on Mac and Linux.
-chocolatey is the package manager/ installer which is used to install make(Note: Run Powershell as administrator and then use the command choco install make so make is installed in our computer )
+chocolatey is the package manager/ installer which is used to install make(Note: Run Powershell as administrator and then use the command <b>choco install make <b> so make is installed in our computer )
 To check whether we installed make succesfully and also which version of make we have
 make version </h5>
 <h1>Python virtual environment<h1>
