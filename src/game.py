@@ -54,7 +54,13 @@ class Game:
         while self.current_turn().turn_over is not True:
             p1 = self.current_turn().which_players_turn()
             print(f"It's {p1.get_name()} turn")
-            user_inp = input("(help) roll/hold: ")
+            user_inp = input("(help) roll/hold: ").lower()
+
+            inputs = ["roll", "hold", "help"]
+            while user_inp not in inputs:  # check if input is valid
+                print("Invalid input, try again (help), (roll), (hold)")
+                user_inp = input("(help) roll/hold: ").lower()
+
             if user_inp == "roll":
                 print(f"{p1.get_name()} choose to play")
                 print(f"{p1.get_name()} rolled {self.current_turn().roll()}")

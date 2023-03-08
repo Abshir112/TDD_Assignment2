@@ -42,7 +42,7 @@ class UserGame:
             self.player_vs_player()
         elif self.game_type == "2":
             self.player_vs_computer()
-        elif self.game_type == "3":
+        else:
             print("Goodbye!")
             print("Thank you for playing")
             print("See you next time")
