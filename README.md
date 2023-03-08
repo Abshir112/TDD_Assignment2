@@ -14,9 +14,9 @@
 - [✍️ Authors ](#️-authors-)
 
 ## 🧐 About <a name = "about"></a>
-<h3> PIG DICE GAME</h3>
+<h3> PIG DICE GAME 🎲 </h3>
 <h5> Pig is a simple dice game first described in print by John Scarne in 1945. Players take turns to roll a single dice as many times as they wish, adding all roll results to a running total, but losing their gained score for the turn if they roll a 1.</h5>
-<h3>Rules to play the pig dice game</h3>
+<h3>Rules to play the pig dice game 📋</h3>
 <h4>
 Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold":
 If the player rolls a 1, they score nothing and it becomes the next player's turn.
@@ -32,7 +32,7 @@ There are 7 class totally used in project <br>
 <b>Dice class: </b> <br>
 Defines the dice faces which is 6; randomly rolls between die faces 1 to 6 <br>
 <b>Player class: </b> To keep track of player name and their score(Total score) <br>
-<b>Dicehand class: </b> <br>
+<b>Dicehand class: 🔁 </b> <br>
 Each round in the game player decides to roll/ hold
 If player rolls gamechanger (dice face 1), directly set player turn score to 0 and end their turn.
 If player rolls between 2 to 6, the die face rolled will be set as their turn score,
@@ -44,7 +44,7 @@ We are keeping track of which player's turn is ongoing, when player holds or rol
 Also here when one player's turn gets over we have functions to start next players turn
 We also have cheat code in this class, player cheats and wins the game.
 Player name change functionality while game is ongoing has also been added. <br>
-<b>Intelligence Class</b> <br>
+<b>Intelligence Class</b> <img src = "src\robot.png" width = "80px" height = "70px"> <br>
 This Intelligence class inherits from another class called Dicehand. The Intelligence class represents the computer player in a game of pig. The play method randomly chooses whether the computer player should roll the dice or hold, and the "computer_play" method simulates the computer player's turn.
 Particularly we are giving more weightage to hold and play wisely the greedy pig game
 so that our computer chooses to hold if they have attained some highest turn total instead of rolling 1 and loosing all turn scores.<br>
@@ -60,7 +60,7 @@ In this class we are running our pig dice game.
 <h2>White box testing - "Test the code knowing exactly how it look like" Unit testing is white box testing. </h2>
 <h3> For testing purpose we used unit testing in python </h3>
 <h2> Strategy</h2>
-<h4> Test driven development 🧐
+<h4> Test driven development 💻
 We planned how many classes we will be having for game, then planned for what functionality
 each class should have. Side by side we have planned for the test cases and implemented the testcases to check whether functions works as indented, then we added more code to make the testcases pass.
 </h4>
