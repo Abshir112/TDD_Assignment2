@@ -11,8 +11,6 @@
 - [🧐 About ](#-about-)
 - [👨‍💻 Description ](#-description-)
 - [🏁 Getting Started ](#-getting-started-)
-- [⛏️ Installing Dependency ](#️-installing-dependency-)
-- [⛏️ Installing Game](#️-installing-game-)
 - [Usage](#usage)
 - [⛏️ Built Using ](#️-built-using-)
 - [✍️ Authors ](#️-authors-)
@@ -34,26 +32,6 @@ This is a general template for any Python project you want to start working on.
 
 ### Installing Dependency
 *These are essential tools to install before even downloading the game*
-
-### Installing Game
-*Here you can add a description on how to install the project*
-
-### Usage
-
-*Here you can add a description on how to run and use the project*
-
-
-## ⛏️ Built Using <a name = "built_using"></a>
-
-*Here you can link the packages/modules/dependencies used to build your project*
-
-## ✍️ Authors <a name = "authors"></a>
-
-*Here you can add a list of authors/people who worked and maintain the project*
-
-- [@abshir](https://github.com/abshir112) - Idea & Initial work
-- [@Lakshmi](https://github.com/lakshmivishal9496 ) - Idea & Initial work
-
 
 ### Check version of Python
 Check what version of Python you have. The Makefile uses `PYTHON=python` as default.
@@ -109,3 +87,23 @@ Do not forget to check that you have an active venv.
 <h1>Codestyle with black</h1>
 You can unify the codestyle using black. Running black will change your source code to have a codestyle according to black codestyle.
 <h3 align = "center"> <b> make black </b> </h3>
+
+
+### Installing Game
+*Here you can add a description on how to install the project*
+
+### Usage
+
+*Here you can add a description on how to run and use the project*
+
+
+## ⛏️ Built Using <a name = "built_using"></a>
+
+*Here you can link the packages/modules/dependencies used to build your project*
+
+## ✍️ Authors <a name = "authors"></a>
+
+*Here you can add a list of authors/people who worked and maintain the project*
+
+- [@abshir](https://github.com/abshir112) - Idea & Initial work
+- [@Lakshmi](https://github.com/lakshmivishal9496 ) - Idea & Initial work
