@@ -30,7 +30,7 @@ This is a general template for any Python project you want to start working on.
 <img src = "src\dice.gif" width = "80px" height = "70px">
 </a>
 
-### Installing Dependency
+<h2>Installing Dependency </h2>
 *These are essential tools to install before even downloading the game*
 
 ### Check version of Python
