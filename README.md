@@ -11,8 +11,8 @@
 - [🧐 About ](#-about-)
 - [👨‍💻 Description ](#-description-)
 - [🏁 Getting Started ](#-getting-started-)
-    - [Installing (Dependency)](#installing dependency for project)
-    - [Installing the game](#-how to install game-)
+  - [Installing Dependency ](#-Install_dependency-)
+  - [Installing the game](#-how_to_install_game-)
   - [Usage](#usage)
 - [⛏️ Built Using ](#️-built-using-)
 - [✍️ Authors ](#️-authors-)
@@ -28,7 +28,7 @@ This is a general template for any Python project you want to start working on.
 *Here you can add a description for your project and its purpose*
 
 ## 🏁 Getting Started <a name = "getting_started">
-<img src = "src\dice.gif">
+<img src = "src\dice.gif" width = "10px" height = "10px">
 </a>
 
 ### Installing Dependency
@@ -58,8 +58,8 @@ This is a general template for any Python project you want to start working on.
 Check what version of Python you have. The Makefile uses `PYTHON=python` as default.
 
 
-<h4>Check you Python installation<h4>
-make version
+<h1>Check you Python installation<h1>
+<h3 align = "center"> <b>make version</b> </h3>
 <h5>If you have another naming of the Python executable then you can solve that using an environment variable. This is common on Mac and Linux.
 chocolatey is the package manager/ installer which is used to install make(Note: Run Powershell as administrator and then use the command <b>choco install make <b> so make is installed in our computer )
 To check whether we installed make succesfully and also which version of make we have
@@ -67,14 +67,14 @@ make version </h5>
 <h1>Python virtual environment<h1>
 <p>Install a Python virtual environment and activate it.<p>
 <h1>Activate on Windows</h1>
-<h3>. .venv/Scripts/activate</h3>
+<h3 align= "center">. .venv/Scripts/activate</h3>
 <h1>Activate on Linx/Mac</h1>
-<h3>. .venv/bin/activate</h3>
+<h3 align = "center">. .venv/bin/activate</h3>
 <p>When you are done you can leave the venv using the command `deactivate`.<p>
 <h1>Install the dependencies</h1>
 
 <p>
-Install the PIP packages that are dependencies to the project and/or the development environment. The dependencies are documented in the `requirements.txt`.
+Install the PIP packages that are dependencies to the project and/or the development environment. The dependencies are documented in the `requirements.txt` and pyproject.toml
 
 Do not forget to check that you have an active venv.
 </p>
