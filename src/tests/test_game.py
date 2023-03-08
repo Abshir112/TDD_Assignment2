@@ -20,6 +20,7 @@ class TestGame(unittest.TestCase):
         self.game = Game(self.dicehand1, self.dicehand2)
 
     def test__init__(self):
+        """Test the init method."""
         self.assertIsInstance(self.game, Game)
         dicehand_one = Dicehand(self.player1, self.dice)
         self.assertTrue(self.dicehand1, dicehand_one)
@@ -42,6 +43,7 @@ class TestGame(unittest.TestCase):
         self.assertEqual(self.game.is_over, False)
 
     def test_cheat_end_game(self):
+        """Test the cheat end game method."""
         self.assertEqual(self.game.is_over, False)
         self.dicehand1.which_players_turn().set_total_score(100)
         self.game.is_over = True

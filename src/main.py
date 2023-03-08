@@ -1,3 +1,5 @@
+"""This module is the main module of the game."""
+
 from usergame import UserGame
 
 

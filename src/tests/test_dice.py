@@ -30,11 +30,13 @@ class TestDice(unittest.TestCase):
         self.assertEqual(result, 1)
 
     def test_roll_dice_2(self):
+        """Test the roll dice method."""
         with patch('random.randint', return_value=2):
             result = self.dice.roll_dice()
         self.assertEqual(result, 2)
 
     def test_roll_dice_3(self):
+        """Test the roll dice method."""
         with patch('random.randint', return_value=3):
             result = self.dice.roll_dice()
         self.assertEqual(result, 3)
@@ -47,11 +49,13 @@ class TestDice(unittest.TestCase):
         self.assertEqual(result, 4)
 
     def test_roll_dice_5(self):
+        """Test the roll dice method."""
         with patch('random.randint', return_value=5):
             result = self.dice.roll_dice()
         self.assertEqual(result, 5)
 
     def test_roll_dice_6(self):
+        """Test the roll dice method."""
         with patch('random.randint', return_value=6):
             result = self.dice.roll_dice()
         self.assertEqual(result, 6)
