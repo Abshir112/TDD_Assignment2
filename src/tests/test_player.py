@@ -6,6 +6,7 @@ from player import Player
 
 class TestPlayer(unittest.TestCase):
     """This class represents the test player class."""
+
     def setUp(self):
         """Set up the test player class."""
         self.player = Player("Abshir", 0)
@@ -32,7 +33,3 @@ class TestPlayer(unittest.TestCase):
         # Test that the set_name method sets the correct name
         self.player.set_name("Lakshmi")
         self.assertEqual(self.player.get_name(), "Lakshmi")
-
-
-if __name__ == '__main__':
-    unittest.main()

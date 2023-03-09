@@ -9,6 +9,7 @@ from dicehand import Dicehand
 
 class TestDicehand(unittest.TestCase):
     """This class represents the test dicehand class."""
+
     def setUp(self):
         """Set up the test dicehand class."""
         self.player1 = Player("player1", 0)
@@ -35,7 +36,7 @@ class TestDicehand(unittest.TestCase):
 
     def test_roll_gamechanger(self):
         """Test the roll method."""
-        with patch('random.randint', return_value=1):
+        with patch("random.randint", return_value=1):
             result = self.dicehand.roll()
         self.assertEqual(result, 1)
         self.assertEqual(self.dicehand.score, 0)
@@ -43,7 +44,7 @@ class TestDicehand(unittest.TestCase):
 
     def test_roll_non_gamechanger(self):
         """Test the roll method."""
-        with patch('random.randint', return_value=4):
+        with patch("random.randint", return_value=4):
             result = self.dicehand.roll()
         self.assertEqual(result, 4)
         self.assertEqual(self.dicehand.score, 4)
@@ -67,7 +68,3 @@ class TestDicehand(unittest.TestCase):
         self.assertEqual(result, 15)
         self.assertTrue(self.dicehand.turn_over)
         self.assertEqual(self.dicehand.score, 0)
-
-
-if __name__ == '__main__':
-    unittest.main()

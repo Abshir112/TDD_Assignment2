@@ -10,6 +10,7 @@ from dicehand import Dicehand
 
 class TestUserGame(unittest.TestCase):
     """This class represents the test player class."""
+
     def setUp(self):
         """Set up the test game class."""
         self.user = UserGame()

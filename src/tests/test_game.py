@@ -48,7 +48,3 @@ class TestGame(unittest.TestCase):
         self.dicehand1.which_players_turn().set_total_score(100)
         self.game.is_over = True
         self.assertEqual(self.game.is_over, True)
-
-
-if __name__ == '__main__':
-    unittest.main()

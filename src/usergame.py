@@ -22,7 +22,7 @@ class UserGame:
     1. Player vs Player
     2. Player vs Computer
     3. Exit"""
-            )
+        )
 
         self.game_type = input("Enter your choice(1, 2, 3): ")
 
@@ -72,7 +72,7 @@ class UserGame:
                     print(
                         f"\n{dicehand3.which_players_turn().get_name()} \
 is winner"
-                        )
+                    )
                     game1.is_over = True
                     break
 
@@ -104,10 +104,6 @@ is winner"
                     game1.start_next_turn()
                 if playe2.get_total_score() >= self.target:
                     dicehand2.which_players_turn().has_won = True
-                    print(
-                        f"\n{dicehand2.which_players_turn().get_name()} \
-is winner"
-                        )
                     game1.is_over = True
                     break
 
@@ -124,7 +120,7 @@ is winner"
         the turn passes to the next player.
         You can choose to stop rolling and keep your points by holding'.\n
         The first player to reach 100 points wins.\n"""
-              )
+        )
 
         input("Press Enter to start the game...")
         print()

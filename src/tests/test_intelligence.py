@@ -8,6 +8,7 @@ from dice import Dice
 
 class TestIntelligence(unittest.TestCase):
     """This class represents the test intelligence class."""
+
     def setUp(self):
         """Set up the test intelligence class."""
         self.dice = Dice(6)
@@ -41,7 +42,3 @@ class TestIntelligence(unittest.TestCase):
         computer.roll()
         computer.end_turn()
         self.assertEqual(computer.turn_over, True)
-
-
-if __name__ == '__main__':
-    unittest.main()

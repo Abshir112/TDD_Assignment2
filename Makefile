@@ -65,7 +65,7 @@ test: check-venv
 
 flake8: check-venv
 	@$(call MESSAGE,$@)
-	-flake8 --exclude=.svn,CVS,.bzr,.hg,.git,__pycache__,.tox,.nox,.eggs,*.egg,.venv,venv,*.pyc
+	@-flake8 --exclude=.svn,CVS,.bzr,.hg,.git,__pycache__,.tox,.nox,.eggs,*.egg,.venv,venv,*.pyc
 
 black: check-venv
 	@$(call MESSAGE,$@)
