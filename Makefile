@@ -92,16 +92,13 @@ codestyle: black
 
 # ---------------------------------------------------------
 # Work with generating documentation.
-#
-.PHONY: pydoc
-pydoc:
-	@$(call MESSAGE,$@)
-	$(PYTHON) -m pydoc -w src/*.py
-	mv *.html doc/pydoc
 
-# pdoc:
-# 	@$(call MESSAGE,$@)
-# 	pdoc --force --html --output-dir doc/pdoc src/*.py
+.PHONY: pdoc
+
+pdoc:
+	@$(call MESSAGE,$@)
+	pdoc -o doc/pdoc src/*.py
+# $(PYTHON) -m pydoc -w src/.py -o doc/pydoc
 
 pyreverse:
 	@$(call MESSAGE,$@)
@@ -111,7 +108,7 @@ pyreverse:
 	dot -Tpng packages.dot -o doc/pyreverse/packages.png
 	rm -f classes.dot packages.dot
 
-doc: pydoc pyreverse #pydoc sphinx
+doc: pdoc pyreverse #pydoc sphinx
 
 
 
@@ -149,3 +146,12 @@ bandit:
 	@$(call MESSAGE,$@)
 	bandit --recursive src
 
+    # $(PYTHON) -m pydoc -w src/.py -o doc/pydoc
+# pydoc:
+# 	@$(call MESSAGE,$@)
+# 	$(PYTHON) -m pydoc -w src/*.py
+# 	mv *.html doc/pydoc
+
+# pdoc:
+# 	@$(call MESSAGE,$@)
+# 	pdoc --force --html --output-dir doc/pdoc src/*.py
