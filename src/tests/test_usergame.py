@@ -17,12 +17,11 @@ class TestUserGame(unittest.TestCase):
 
     def test_init(self):
         """Test the init method."""
-
         # Test if the game is an instance of game
         self.assertIsInstance(self.user, UserGame)
 
     def test_player_vs_computer(self):
-        """Test whether player vs computer method work as indented"""
+        """Test whether player vs computer method work as indented."""
         player1 = Player("player1", 0)
         computer = Player("Computer", 0)
         dice1 = Dice(6)
@@ -44,7 +43,7 @@ class TestUserGame(unittest.TestCase):
         self.assertEqual(game2.is_over, True)
 
     def test_player_vs_player(self):
-        """Test whether player vs computer method work as indented"""
+        """Test whether player vs computer method work as indented."""
         player1 = Player("player1", 0)
         player2 = Player("player2", 0)
         dice1 = Dice(6)

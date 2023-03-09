@@ -77,7 +77,7 @@ is winner"
                     break
 
     def player_vs_player(self):
-        """Player vs Player game"""
+        """Player vs Player game."""
         player1 = Player("", 0)
         playe2 = Player("", 0)
         dice1 = Dice(6)

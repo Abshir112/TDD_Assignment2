@@ -26,7 +26,6 @@ class TestIntelligence(unittest.TestCase):
 
     def test_play(self):
         """Test the play method."""
-
         # Test that the play method returns either "roll" or "hold"
         self.assertIn(self.intelligence.play(), ["roll", "hold"])
 

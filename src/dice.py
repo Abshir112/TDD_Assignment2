@@ -22,4 +22,5 @@ class Dice:
         return self.dice
 
     def __str__(self) -> str:
+        """Return the dice face."""
         return f"Dice faces are {self.dice}"

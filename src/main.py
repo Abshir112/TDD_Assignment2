@@ -4,7 +4,7 @@ from usergame import UserGame
 
 
 def main():
-    """Main function."""
+    """Run the program."""
     user_game1 = UserGame()
 
     user_game1.print_welcome()

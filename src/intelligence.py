@@ -14,7 +14,7 @@ class Intelligence(Dicehand):
         return chosen
 
     def computer_play(self):
-        """Computer play."""
+        """Get the computer to play."""
         p3 = self.which_players_turn()
         print(f"It's {p3.get_name()} turn")
         while self.turn_over is not True and p3.has_won is False:
