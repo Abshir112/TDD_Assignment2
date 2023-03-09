@@ -1,6 +1,6 @@
 PYTHON :=
 ifeq ($(OS),Windows_NT)
-	PYTHON=.venv\Scripts\python
+	PYTHON=.venv/Scripts/python
 else
 	PYTHON=.venv/bin/python
 endif
@@ -32,8 +32,8 @@ build-toml: install-toml
 # Cleanup generated and installed files.
 
 clean: 
-	find . -name '*.coverage *.pyc' -exec rm -f {} + 
-	find . -name '__pycache__' -exec rm -fr {} +
+	@find . -name '*.coverage *.pyc' -exec rm -f {} + 
+	@find . -name '__pycache__' -exec rm -fr {} +
 	rm -rf .coverage htmlcov 
 
 
@@ -72,35 +72,80 @@ test: check-venv
 
 flake8: check-venv
 	@$(call MESSAGE,$@)
-	@-flake8 --exclude=.svn,CVS,.bzr,.hg,.git,__pycache__,.tox,.nox,.eggs,*.egg,.venv,venv,*.pyc
-
-black: check-venv
-	@$(call MESSAGE,$@)
-	-black --check --diff src/
+	@flake8 --exclude=.svn,CVS,.bzr,.hg,.git,__pycache__,.tox,.nox,.eggs,*.egg,.venv,venv,*.pyc
 
 coverage: check-venv
 	@$(call MESSAGE,$@)
-	-coverage run -m unittest discover -p 'test_*.py' -v -b
+	@coverage run -m unittest discover -p 'test_*.py' -v -b
 	-coverage html
 	-coverage report -m
 
-cohesion: check-venv
+# ---------------------------------------------------------
+# Work with codestyle.
+#
+black:
 	@$(call MESSAGE,$@)
-	-$(PYTHON) -m radon cc src/ -a -nc
+	@$(PYTHON) -m black src/
 
-.PHONY: pydoc 
-pydoc: check-venv
-	@$(call MESSAGE,$@)
-	-$(PYTHON) -m pydoc -w src/*.py
+codestyle: black
 
-pdoc: check-venv
-	@$(call MESSAGE,$@)
-	-$(PYTHON) -m pdoc --html --output-dir docs/ src/*.py
-	
 
-doc: check-venv
+# ---------------------------------------------------------
+# Work with generating documentation.
+#
+.PHONY: pydoc
+pydoc:
 	@$(call MESSAGE,$@)
-	-$(PYTHON) -m pdoc --html --output-dir docs/ src/*.py 
+	$(PYTHON) -m pydoc -w src/*.py
+	mv *.html doc/pydoc
 
-lint: flake8 check-venv
+# pdoc:
+# 	@$(call MESSAGE,$@)
+# 	pdoc --force --html --output-dir doc/pdoc src/*.py
+
+pyreverse:
 	@$(call MESSAGE,$@)
+	install -d doc/pyreverse
+	pyreverse src/*.py
+	dot -Tpng classes.dot -o doc/pyreverse/classes.png
+	dot -Tpng packages.dot -o doc/pyreverse/packages.png
+	rm -f classes.dot packages.dot
+
+doc: pydoc pyreverse #pydoc sphinx
+
+
+
+# ---------------------------------------------------------
+# Calculate software metrics for your project.
+#
+radon-cc:
+	@$(call MESSAGE,$@)
+	radon cc --show-complexity --average src
+
+radon-mi:
+	@$(call MESSAGE,$@)
+	radon mi --show src
+
+radon-raw:
+	@$(call MESSAGE,$@)
+	radon raw src
+
+radon-hal:
+	@$(call MESSAGE,$@)
+	radon hal src
+
+cohesion:
+	@$(call MESSAGE,$@)
+	cohesion --directory src
+
+metrics: radon-cc radon-mi radon-raw radon-hal cohesion
+
+
+
+# ---------------------------------------------------------
+# Find security issues in your project.
+#
+bandit:
+	@$(call MESSAGE,$@)
+	bandit --recursive src
+
