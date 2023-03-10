@@ -27,7 +27,7 @@ The first player to score 100 or more points wins.
 👨‍💻 Description <a name = "description"></a>
 <h4>
 Our dicegame project is created using Object Oriented Programming principles. <br>
-<h3>Progamming Language Used: Python.</h3> <br>
+<h3>Progamming Language Used: Python, Makefile.</h3> <br>
 There are 7 class totally used in project <br>
 <b>Dice class: 🎲 </b> <br>
 Defines the dice faces which is 6; randomly rolls between die faces 1 to 6 <br><br>
@@ -71,15 +71,29 @@ each class should have. Side by side we have planned for the test cases and impl
 </a>
 
 ### Installing Game
-*Here you can add a description on how to install the project*
+<h4> If you want to install our game and enjoy playing, you can clone our repository from the link below</h4>
+<a href = "https://github.com/Abshir112/TDD_Assignment2.git">Pig DICE GAME</a>
+
 
 ### Usage
-
-*Here you can add a description on how to run and use the project*
+<h4> To run and use the project:</h4>
+<p  font-size = "10px" > 
+If you want to run our project in venv activated environment, use the command
+  make run
+  (Note: Check whether you installed packages and activate the venv) </p>
+<p font-size = "10px">
+If you want to run the game in your terminal follow these steps:
+1. Open the repository that you have cloned.
+2. Navigate to src directory
+3. Run code using command:
+   <b> python main.py </b>
+4. Choose the game type and play
+5. Follow the instructions and enjoy playing the game.
+</p>
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
-<h2>Installing Dependency </h2>
+<h2>Installing Required tools </h2>
 *These are essential tools to install before even downloading the game*
 
 ### Check version of Python
@@ -131,15 +145,15 @@ Do not forget to check that you have an active venv.
 <h3 align = "center"> <b> make clean </b> </h3>
 # Do also remove all you have installed
 <h3 align = "center" > <b> make clean-all </b> </h3>
-
+<h3 align = "center" > <b> make clean-src </b> </h3>
+<h3 align = "center" > <b> make clean-docs </b> </h3>
+<h3 align = "center" > <b> make clean-build </b> </h3>
 <h1>Codestyle with black</h1>
-You can unify the codestyle using black. Running black will change your source code to have a codestyle according to black codestyle.
+Running black will change your source code to have a codestyle according to black codestyle.
 <h3 align = "center"> <b> make black </b> </h3>
 
 
 ## ✍️ Authors <a name = "authors"></a>
-
-*Here you can add a list of authors/people who worked and maintain the project*
 
 - [@abshir](https://github.com/abshir112) - Idea & Initial work
 - [@Lakshmi](https://github.com/lakshmivishal9496 ) - Idea & Initial work
