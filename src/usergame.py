@@ -69,9 +69,9 @@ class UserGame:
                     game1.start_next_turn()
                 if player3.get_total_score() >= self.target:
                     dicehand3.which_players_turn().has_won = True
-                    print("Congratulations!")
+                    print("\nCongratulations!")
                     print(
-                        f"\n{dicehand3.which_players_turn().get_name()} \
+                        f"{dicehand3.which_players_turn().get_name()} \
 is the winner"
                     )
                     game1.is_over = True
