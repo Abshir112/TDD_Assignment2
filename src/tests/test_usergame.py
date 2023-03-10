@@ -39,6 +39,8 @@ class TestUserGame(unittest.TestCase):
         dicehand3.set_score(50)
         computer.set_total_score(50)
         dicehand3.end_turn()
+        # It must not start next player turn when one player wins the game
+        # set game over to be true so that it'll not invoke next dicehand
         game2.is_over = True
         self.assertEqual(game2.is_over, True)
 
