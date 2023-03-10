@@ -50,7 +50,7 @@ class UserGame:
     def player_vs_computer(self):
         """Player vs computer."""
         player1 = Player("", 0)
-        player3 = Player("computer", 0)
+        player3 = Player("Computer", 0)
         dice1 = Dice(6)
         choose_name = input("\nEnter Your name: ")
         player1.set_name(choose_name.upper())
@@ -69,9 +69,10 @@ class UserGame:
                     game1.start_next_turn()
                 if player3.get_total_score() >= self.target:
                     dicehand3.which_players_turn().has_won = True
+                    print("Congratulations!")
                     print(
                         f"\n{dicehand3.which_players_turn().get_name()} \
-is winner"
+is the winner"
                     )
                     game1.is_over = True
                     break

@@ -88,9 +88,10 @@ class Game:
             contestant = self.current_turn().which_players_turn()
             if contestant.get_total_score() >= target:
                 self.current_turn().which_players_turn().has_won = True
+                print("Congratulations!")
                 print(
                     f"{self.current_turn().which_players_turn().get_name()} \
-is winner"
+is the winner"
                 )
                 self.is_over = True
                 break
