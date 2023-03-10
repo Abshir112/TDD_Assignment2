@@ -93,22 +93,22 @@ codestyle: black
 # ---------------------------------------------------------
 # Work with generating documentation.
 
-.PHONY: pdoc
+.PHONY: pydoc
 
-pdoc:
+pydoc:
 	@$(call MESSAGE,$@)
-	pdoc -o doc/pdoc src/*.py
-# $(PYTHON) -m pydoc -w src/.py -o doc/pydoc
+	pdoc --html -o doc/pdoc src/*.py
+#	@$(PYTHON) -m pydoc -w src/*.py -o doc/pydoc
 
 pyreverse:
 	@$(call MESSAGE,$@)
-	install -d doc/pyreverse
+	@install -d doc/pyreverse
 	pyreverse src/*.py
 	dot -Tpng classes.dot -o doc/pyreverse/classes.png
 	dot -Tpng packages.dot -o doc/pyreverse/packages.png
 	rm -f classes.dot packages.dot
 
-doc: pdoc pyreverse #pydoc sphinx
+doc: pydoc pyreverse #pydoc sphinx
 
 
 
