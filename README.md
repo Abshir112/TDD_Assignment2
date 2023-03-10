@@ -83,12 +83,14 @@ If you want to run our project in venv activated environment, use the command
   (Note: Check whether you installed packages and activate the venv) </p>
 <p font-size = "10px">
 If you want to run the game in your terminal follow these steps:
-1. Open the repository that you have cloned.
-2. Navigate to src directory
-3. Run code using command:
-   <b> python main.py </b>
-4. Choose the game type and play
-5. Follow the instructions and enjoy playing the game.
+<ul>
+  <li>Open the repository that you have cloned.</li>
+  <li>Navigate to src directory</li>
+  <li>Run code using command: <b> python main.py </b></li>
+  <li>Choose the game type and play</li>
+  <li>Follow the instructions and enjoy playing the game. </li>
+</ul>
+
 </p>
 
 ## ⛏️ Built Using <a name = "built_using"></a>
