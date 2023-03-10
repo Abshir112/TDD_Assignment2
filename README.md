@@ -60,10 +60,10 @@ In this class we are running our pig dice game.
 <h2>White box testing - "Test the code knowing exactly how it look like" Unit testing is white box testing. </h2>
 <h3> For testing purpose we used unit testing in python </h3>
 <h2> Strategy</h2>
-<h4> Test driven development 💻
+<p font-size = "10px"> Test driven development 💻
 We planned how many classes we will be having for game, then planned for what functionality
 each class should have. Side by side we have planned for the test cases and implemented the testcases to check whether functions works as indented, then we added more code to make the testcases pass.
-</h4>
+</p>
 
 ## 🏁 Getting Started <a name = "getting_started">
 <h1> Lets Play PIG DICE GAME
@@ -71,7 +71,7 @@ each class should have. Side by side we have planned for the test cases and impl
 </a>
 
 ### Installing Game
-<h4> If you want to install our game and enjoy playing, you can clone our repository from the link below</h4>
+<p font-size = "10px"> If you want to install our game and enjoy playing, you can clone our repository from the link below</p>
 <a href = "https://github.com/Abshir112/TDD_Assignment2.git">Pig DICE GAME</a>
 
 
