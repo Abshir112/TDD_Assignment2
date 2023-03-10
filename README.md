@@ -78,9 +78,9 @@ each class should have. Side by side we have planned for the test cases and impl
 ### Usage
 <h4> To run and use the project:</h4>
 <p  font-size = "10px" > 
-If you want to run our project in venv activated environment, use the command
-  make run
-  (Note: Check whether you installed packages and activate the venv) </p>
+If you want to run our project in venv activated environment, use the command <br>
+  <b>make run<b> <br>
+  (Note: Check whether you installed packages and activate the venv) </p> <br>
 <p font-size = "10px">
 If you want to run the game in your terminal follow these steps:
 <ul>
