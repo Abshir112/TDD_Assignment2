@@ -78,7 +78,7 @@ class Game:
 
                 if cheater == "x":
                     self.cheat_and_endgame()
-                    print(p1)
+                    print(f"\n{p1}")
                     self.current_turn().turn_over = True
 
                 elif cheater == "n":
@@ -88,7 +88,7 @@ class Game:
             contestant = self.current_turn().which_players_turn()
             if contestant.get_total_score() >= target:
                 self.current_turn().which_players_turn().has_won = True
-                print("Congratulations!")
+                print("\nCongratulations!")
                 print(
                     f"{self.current_turn().which_players_turn().get_name()} \
 is the winner"
