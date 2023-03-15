@@ -135,7 +135,9 @@ cohesion:
 	@$(call MESSAGE,$@)
 	cohesion --directory src
 
+
 metrics: radon-cc radon-mi radon-raw radon-hal cohesion
+
 
 
 
