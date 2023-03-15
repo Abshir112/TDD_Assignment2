@@ -109,7 +109,7 @@ To check whether we installed make succesfully and also which version of make we
 <h3>make version </h3>
 <h1>Python virtual environment<h1>
 <h5>Install a Python virtual environment and activate it.</h5>
-<h3 align= "center">python -m venv .venv
+<h3 align= "center">Please run [ python -m venv .venv ] or [ python3 -m venv .venv ]
 </h3>
 <h1>Activate on Windows</h1>
 <h3 align= "center">. .venv/Scripts/activate</h3>
