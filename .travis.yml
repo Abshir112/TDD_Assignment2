@@ -1,9 +1,9 @@
 language: python
 
 # command to install dependencies
-install:
-  - pip install -r requirements.txt
+# install:
+#   - pip install -r requirements.txt
 # command to run tests
 script:
-  -echo "Hello world"
+  print("Hello world")
   # - make test
